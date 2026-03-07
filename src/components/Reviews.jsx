@@ -59,60 +59,81 @@ const Reviews = () => {
           slidesToScroll: 1,
         },
       },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          dots: true,
-        },
-      },
     ],
   };
 
   return (
-    <section className="py-12 mb-10" id="review">
+    <section className="py-14 mb-10" id="review">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="space-y-3 p-4 text-center max-w-3xl mx-auto mb-8">
+        <div className="space-y-4 text-center max-w-3xl mx-auto mb-8">
           <h1 className="text-purple-400 font-semibold uppercase tracking-[0.2em]">
             Reviews
           </h1>
-          <p className="font-semibold text-2xl sm:text-3xl text-white">
+          <p className="font-semibold text-3xl sm:text-4xl text-white leading-tight">
             Hear from members of the Runaans Locks community!
           </p>
         </div>
 
-        <Slider {...settings}>
+        {/* Mobile: stacked cards */}
+        <div className="flex flex-col gap-5 md:hidden">
           {TestimonialsData.map((item) => (
-            <div key={item.id} className="px-2 sm:px-3">
-              <div className="h-full min-h-60 flex flex-col justify-between p-4 sm:p-6 rounded-xl shadow-lg bg-zinc-900 border border-white/10">
-                <div className="flex items-center gap-3 sm:gap-5">
-                  {item.img && (
+            <div
+              key={item.id}
+              className="w-full rounded-3xl border border-white/15 bg-zinc-900/90 p-6 shadow-lg"
+            >
+              <div className="flex items-center gap-4 mb-5">
+                <img
+                  src={item.img}
+                  alt={item.name}
+                  className="w-14 h-14 rounded-full object-cover shrink-0"
+                />
+                <div className="min-w-0">
+                  <p className="text-2xl font-bold text-white wrap-break-word">
+                    {item.name}
+                  </p>
+                  <p className="text-gray-400 text-sm">Member</p>
+                </div>
+              </div>
+
+              <p className="text-gray-300 text-lg leading-relaxed wrap-break-word">
+                {item.text}
+              </p>
+
+              <div className="mt-5 text-3xl">⭐⭐⭐⭐⭐</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop / Tablet: slider */}
+        <div className="hidden md:block">
+          <Slider {...settings}>
+            {TestimonialsData.map((item) => (
+              <div key={item.id} className="px-3">
+                <div className="min-h-70 rounded-2xl border border-white/10 bg-zinc-900 p-6 shadow-lg">
+                  <div className="flex items-center gap-4 mb-5">
                     <img
                       src={item.img}
                       alt={item.name}
-                      className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover shrink-0"
+                      className="w-16 h-16 rounded-full object-cover shrink-0"
                     />
-                  )}
-
-                  <div className="min-w-0">
-                    <p className="text-base sm:text-xl font-bold text-white truncate">
-                      {item.name}
-                    </p>
-                    <p className="text-xs sm:text-sm text-gray-400">Member</p>
+                    <div className="min-w-0">
+                      <p className="text-xl font-bold text-white wrap-break-word">
+                        {item.name}
+                      </p>
+                      <p className="text-gray-400 text-sm">Member</p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="py-4 sm:py-6 space-y-3">
-                  <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+                  <p className="text-gray-300 leading-relaxed wrap-break-word">
                     {item.text}
                   </p>
-                  <p className="text-sm">⭐⭐⭐⭐⭐</p>
+
+                  <div className="mt-5 text-xl">⭐⭐⭐⭐⭐</div>
                 </div>
               </div>
-            </div>
-          ))}
-        </Slider>
+            ))}
+          </Slider>
+        </div>
       </div>
     </section>
   );
