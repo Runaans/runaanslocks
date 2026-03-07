@@ -8,5 +8,5 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: process.env.VITE_BASE_PATH || '/runaans-locks-website'
+  base: process.env.VITE_BASE_PATH || '/runaanslocks'
 })

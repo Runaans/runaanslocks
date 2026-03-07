@@ -9,6 +9,7 @@ import Faq from "./components/Questions";
 import Footer from "./components/Footer";
 import About from "./components/About";
 import Price from "./components/Price";
+import { Analytics } from '@vercel/analytics'
 
 // to start run node .\server.jsgit
 
@@ -28,7 +29,6 @@ function App() {
 
   return (
   <div>
-
   <Navbar/>
   <Herobar/> 
   <section id='feature'>
@@ -48,6 +48,8 @@ function App() {
     <About/>
   </section>  
   <Footer/>
+
+  <Analytics/>
   </div>
   )
 }
