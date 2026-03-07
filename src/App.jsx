@@ -5,7 +5,7 @@ import Herobar from "./components/Herobar";
 import Statistics from "./components/Statistics";
 import Explore from "./components/Explore";
 import Reviews from "./components/Reviews";
-import FAQ from "./components/faq";
+import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 import About from "./components/About";
 import Price from "./components/Price";
