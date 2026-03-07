@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 import About from "./components/About";
 import Price from "./components/Price";
 import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 // to start run node .\server.js
 
