@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 import About from "./components/About";
 import Price from "./components/Price";
 
-// to start run node .\server.js
+// to start run node .\server.jsgit
 
 function App() {
   const [array, setArray] = useState([]); // fetched data to put in state variable
