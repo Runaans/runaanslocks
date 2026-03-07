@@ -9,9 +9,9 @@ import Faq from "./components/Questions";
 import Footer from "./components/Footer";
 import About from "./components/About";
 import Price from "./components/Price";
-import { Analytics } from '@vercel/analytics'
+import { Analytics } from "@vercel/analytics/react";
 
-// to start run node .\server.jsgit
+// to start run node .\server.js
 
 function App() {
   const [array, setArray] = useState([]); // fetched data to put in state variable
